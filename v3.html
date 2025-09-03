@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESouto Holding</title>
+  <style>
+    body {
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      background-color: #cccccc;
+      color: #333333;
+      width: 80vw;
+    }
+    header {
+      background-color: #0A2326;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-placeholder {
+      width: 150px;
+      height: 50px;
+      background-color: #D4B13A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #0A2326;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+    .logo-placeholder > img {
+        width: 100%;
+        height: auto;
+        border-radius: 20%;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .hero {
+      background-color: #0A2326;
+      color: #D4B13A;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero p{
+      color: white;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .hero-image {
+      flex: 1;
+      min-height: 300px;
+      background-color: #cccccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+    }
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .two-columns .text, .two-columns .image {
+      flex: 1;
+      min-width: 280px;
+    }
+    .two-columns .image {
+      min-height: 250px;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .grid-4 .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .grid-4 .image-placeholder {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      background-color: #cccccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      border-radius: 50%;
+    }
+    .highlight-image {
+      width: 100%;
+      height: 300px;
+      background-color: #dddddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #0A2326;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔ ";
+      color: #D4B13A;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #0A2326;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder"><img src="images/logoC.jpeg" /></div>
+    <nav>
+      <a href="#" style="color:white; margin: 0 10px;">Início</a>
+      <a href="#" style="color:white; margin: 0 10px;">Quem Somos</a>
+      <a href="#" style="color:white; margin: 0 10px;">Como Atuamos</a>
+      <a href="#" style="color:white; margin: 0 10px;">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Primeira Dobra -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Transformamos conquistas judiciais em valor presente.</h1>
+      <p>A ESouto Holding nasceu para reduzir a distância entre a conquista no Judiciário e a realização financeira efetiva, trazendo previsibilidade, liquidez e solidez a cada operação.</p>
+    </div>
+    <div class="hero-image">Imagem Hero</div>
+  </section>
+
+  <!-- Segunda Dobra -->
+  <section>
+    <div class="two-columns">
+      <div class="text">
+        <h2>Nosso Propósito</h2>
+        <p>Existimos para conferir efetividade ao direito já reconhecido, transformando decisões judiciais em capital disponível no presente. Nosso compromisso é abreviar o tempo entre a vitória no processo e o acesso ao resultado financeiro, oferecendo previsibilidade e liquidez de forma estruturada e juridicamente segura.</p>
+        <p><em>Mais do que antecipar créditos, nosso propósito é proporcionar tranquilidade, solidez e confiança a quem aguarda por aquilo que já lhe é de direito.</em></p>
+      </div>
+      <div class="image">Imagem Propósito</div>
+    </div>
+  </section>
+
+  <!-- Terceira Dobra -->
+  <section>
+    <h2>Do direito reconhecido ao valor disponível</h2>
+    <p>Nosso compromisso é tornar imediato aquilo que a Justiça já reconheceu como devido. Atuamos adquirindo créditos judiciais de forma estruturada e transparente, reduzindo a espera e entregando ao titular a liquidez que lhe é devida.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="image-placeholder">Img</div>
+        <h3>Aquisição Estruturada</h3>
+        <p>Compra de créditos judiciais com deságio justo e previsível.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder">Img</div>
+        <h3>Liquidez Imediata</h3>
+        <p>O valor chega ao presente, sem aguardar o prazo futuro do Estado.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder">Img</div>
+        <h3>Segurança Jurídica</h3>
+        <p>Operações amparadas em rigor contratual e solidez institucional.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder">Img</div>
+        <h3>Previsibilidade</h3>
+        <p>Transparência em todas as etapas, assegurando clareza ao titular do crédito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quarta Dobra -->
+  <section>
+    <h2>Efetividade e tranquilidade ao jurisdicionado</h2>
+    <div class="highlight-image">Imagem Destaque</div>
+    <p>Mais do que antecipar valores, nossa atuação representa a concretização da vitória judicial. Levamos ao titular do crédito a efetividade da decisão e a tranquilidade de acessar, no presente, aquilo que já lhe foi garantido em juízo.</p>
+    <ul>
+      <li>Liquidez no tempo certo: agora.</li>
+      <li>Valorização da conquista judicial.</li>
+      <li>Processo simples, transparente e seguro.</li>
+      <li>Confiança de uma holding sólida e estruturada.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 ESouto Holding. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Precatórios — Sua Empresa</title>
+  <meta name="description" content="Página institucional sobre oportunidades em precatórios. Layout inspirado em páginas de bancos de investimento." />
+  <style>
+    :root{
+      --bg:#0b1736;          /* azul escuro (não é a paleta BTG) */
+      --bg-2:#0f214a;        
+      --text:#e9edf5;
+      --muted:#b8c2d9;
+      --brand:#7cc4ff;       /* destaque */
+      --accent:#8ee3c3;
+      --card:#111a3a;
+      --card-2:#0f1834;
+      --line:#243054;
+      --max:1200px;
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#08102a 55%, #070c1e);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:auto;padding:0 24px}
+
+    /* Header */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:rgba(8,16,42,.7);border-bottom:1px solid rgba(255,255,255,.06)}
+    .site-inner{display:flex;align-items:center;gap:24px;min-height:72px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--brand), #2a6fb7 70%);box-shadow:0 0 0 3px rgba(255,255,255,.06)}
+    .brand strong{font-weight:700;letter-spacing:.4px}
+    nav.primary{margin-left:auto}
+    nav.primary ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    nav.primary a{display:inline-block;padding:10px 6px;color:var(--text)}
+    nav.primary a:hover{color:white}
+    .cta-header{margin-left:8px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(60% 50% at 70% 10%, rgba(124,196,255,.25), transparent 60%), radial-gradient(60% 60% at 10% 20%, rgba(142,227,195,.14), transparent 70%)}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding:72px 0}
+    .kicker{display:inline-flex;gap:8px;align-items:center;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.12em}
+    .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:14px 0 10px}
+    .hero p.lead{font-size:clamp(16px,2.2vw,20px);color:#d6dff3;max-width:54ch}
+    .hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:10px 12px;border-radius:999px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+
+    /* KPIs */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;text-align:center}
+    .stat .num{font-size:26px;font-weight:800}
+    .stat .lbl{font-size:13px;color:var(--muted)}
+
+    /* Sections */
+    section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
+    h2.section-title{font-size:clamp(22px,3.2vw,34px);margin:0 0 14px}
+    p.section-sub{color:var(--muted);margin:0 0 28px}
+
+    /* Cards grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px}
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .card p{color:#c9d3ea}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:var(--card-2);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    .step .n{font-weight:800;font-size:12px;letter-spacing:.18em;color:var(--muted)}
+    .step h4{margin:6px 0 8px}
+
+    /* FAQ */
+    .faq{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    details{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px}
+    details + details{margin-top:12px}
+    summary{cursor:pointer;font-weight:600}
+    summary::-webkit-details-marker{display:none}
+
+    /* CTA block */
+    .cta-block{display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(90deg,rgba(124,196,255,.16),rgba(142,227,195,.12));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px}
+
+    /* Form */
+    .form{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:22px}
+    .form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .form input,.form select,.form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0b1432;color:#fff}
+    .form textarea{min-height:120px;resize:vertical}
+    .form .actions{display:flex;gap:12px;justify-content:flex-end;margin-top:12px}
+
+    /* Footer */
+    footer{padding:40px 0;color:#aeb8d3;border-top:1px solid rgba(255,255,255,.06)}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
+    .foot h5{margin:0 0 10px;color:#dfe7fb}
+    .copyright{margin-top:26px;border-top:1px solid rgba(255,255,255,.06);padding-top:16px;font-size:13px;color:#9fb0d7}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      nav.primary{display:none}
+      .hero .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .faq{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .stats,.cards,.steps{grid-template-columns:1fr}
+      .form .row{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site">
+    <div class="container site-inner">
+      <a class="brand" href="#top" aria-label="Página inicial">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>Sua Empresa</strong>
+      </a>
+      <nav class="primary" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#oque">O que são</a></li>
+          <li><a href="#como">Como funciona</a></li>
+          <li><a href="#vantagens">Vantagens</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="btn cta-header" href="#contato">Falar com especialista</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Soluções em Precatórios</div>
+          <h1>Oportunidades com segurança e estratégia para você e sua empresa</h1>
+          <p class="lead">Estruture suas operações com uma equipe dedicada e assessoria ponta a ponta. Transparência, governança e modelos sob medida para diferentes perfis.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#contato">Começar agora</a>
+            <span class="pill">Atendimento personalizado</span>
+            <span class="pill">Equipe sênior</span>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="num">+R$ 1 bi</div><div class="lbl">em operações assessoradas*</div></div>
+            <div class="stat"><div class="num">12 anos</div><div class="lbl">de experiência média</div></div>
+            <div class="stat"><div class="num">24/7</div><div class="lbl">suporte ao investidor</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3>Conte com uma estrutura completa</h3>
+            <p>Originamos, analisamos e acompanhamos operações em todas as etapas, com diligência jurídica e financeira.</p>
+            <ul>
+              <li>Modelagem e originação</li>
+              <li>Diligência e avaliação</li>
+              <li>Execução e acompanhamento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE SÃO -->
+  <section id="oque">
+    <div class="container">
+      <h2 class="section-title">O que são precatórios?</h2>
+      <p class="section-sub">Resumo didático sobre a natureza, riscos e oportunidades desse tipo de ativo. Ajuste o texto conforme a sua tese e compliance.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Definição</h3>
+          <p>Precatórios são requisições de pagamento expedidas pelo Judiciário para quitar dívidas do setor público após decisão definitiva.</p>
+        </article>
+        <article class="card">
+          <h3>Características</h3>
+          <p>Possuem deságio, risco de prazo e de contestação. Requerem análise jurídica, segmentação por ente devedor e histórico.</p>
+        </article>
+        <article class="card">
+          <h3>Onde atuamos</h3>
+          <p>Estruturas para pessoa física, jurídica e institucionais, com governança, custódia e acompanhamento contínuo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA / ETAPAS -->
+  <section id="como">
+    <div class="container">
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-sub">Fluxo típico de uma operação — do diagnóstico à liquidação.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="n">ETAPA 1</div>
+          <h4>Diagnóstico</h4>
+          <p>Levantamento de documentação, histórico e elegibilidade da demanda.</p>
+        </div>
+        <div class="step">
+          <div class="n">ETAPA 2</div>
+          <h4>Estruturação</h4>
+          <p>Definição de modelo, garantias, custódia e governança.</p>
+        </div>
+        <div class="step">
+          <div class="n">ETAPA 3</div>
+          <h4>Execução</h4>
+          <p>Negociação, cessão e formalização com controles e compliance.</p>
+        </div>
+        <div class="step">
+          <div class="n">ETAPA 4</div>
+          <h4>Acompanhamento</h4>
+          <p>Monitoramento de prazos, eventos e distribuição de resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VANTAGENS / DIFERENCIAIS -->
+  <section id="vantagens">
+    <div class="container">
+      <h2 class="section-title">Por que nos escolher</h2>
+      <p class="section-sub">Diferenciais competitivos para sua decisão.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Equipe multidisciplinar</h3>
+          <p>Especialistas em jurídico, mercado de capitais e risco de crédito.</p>
+        </article>
+        <article class="card">
+          <h3>Governança e transparência</h3>
+          <p>Processos, documentação e relatórios padronizados.</p>
+        </article>
+        <article class="card">
+          <h3>Operações sob medida</h3>
+          <p>Modelos personalizados para diferentes necessidades e perfis.</p>
+        </article>
+      </div>
+
+      <div class="cta-block" style="margin-top:22px">
+        <div>
+          <strong>Fale com nosso time</strong>
+          <div style="color:#d3dcf4">Apresente seu caso e receba um diagnóstico inicial.</div>
+        </div>
+        <a class="btn" href="#contato">Agendar conversa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq">
+        <div>
+          <details>
+            <summary>Quais são os principais riscos de investir em precatórios?</summary>
+            <p>Risco de prazo, contingências jurídicas e variação de deságio. A mitigação inclui análise documental, diversificação e governança.</p>
+          </details>
+          <details>
+            <summary>Posso vender meu precatório?</summary>
+            <p>Em geral, é possível ceder o crédito. Avaliamos documentação e condições para estruturar a cessão conforme a legislação aplicável.</p>
+          </details>
+          <details>
+            <summary>Qual o prazo médio de liquidação?</summary>
+            <p>Depende do ente devedor e da etapa processual. Fornecemos estimativas com base em dados históricos e diligência.</p>
+          </details>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3>Conteúdo educativo</h3>
+            <p>Aprofunde-se com guias, relatórios e webinars sob demanda.</p>
+            <ul>
+              <li>Guia básico de precatórios</li>
+              <li>Checklist de documentação</li>
+              <li>Webinars gravados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Fale com um especialista</h2>
+      <p class="section-sub">Preencha os dados abaixo e retornaremos rapidamente.</p>
+      <form class="form" action="#" method="post" onsubmit="event.preventDefault(); alert('Formulário enviado! Substitua pelo seu endpoint.');">
+        <div class="row">
+          <div>
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="telefone">Telefone/WhatsApp</label>
+            <input id="telefone" name="telefone" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil">
+              <option>Pessoa física</option>
+              <option>Pessoa jurídica</option>
+              <option>Institucional</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte-nos brevemente sobre sua demanda"></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div class="brand"><span class="logo" aria-hidden="true"></span><strong>Sua Empresa</strong></div>
+          <p style="max-width:46ch;margin-top:10px">Informações meramente ilustrativas. Adapte textos conforme a regulação aplicável e políticas internas.</p>
+        </div>
+        <div>
+          <h5>Produtos</h5>
+          <ul>
+            <li><a href="#oque">Precatórios</a></li>
+            <li><a href="#">Crédito estruturado</a></li>
+            <li><a href="#">Renda fixa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Carreiras</a></li>
+            <li><a href="#">Sala de imprensa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li><a href="#contato">Fale conosco</a></li>
+            <li><a href="#">Políticas e termos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">© <span id="year"></span> Sua Empresa. Todos os direitos reservados.</div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
