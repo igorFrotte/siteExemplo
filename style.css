@@ -28,6 +28,10 @@
       display: flex;
       justify-content: space-between;
     }
+    nav a {
+      color:white; 
+      margin: 0 10px;
+    }
     .mini-logo {
       margin-left: 83px;
     }
@@ -80,6 +84,9 @@
     .colorTwo p{
         color: black;
         padding-bottom: 0px;
+    }
+    .hero h1{
+      margin-top: 100px;
     }
     .hero h2,.hero h1,.hero p{
         padding: 0 10px 0 80px;
@@ -140,6 +147,7 @@
       height: 250px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
+      margin: 0px 5px;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -259,7 +267,7 @@
     .faq-container img {
       width: 25vw;
       border: #0A2326 solid 5px;
-      border-radius: 50%;
+      border-radius: 15%;
     }
     .faq-img {
       width: 50vw;
@@ -347,8 +355,20 @@
     /* ===== Responsividade para celulares ===== */
 @media (max-width: 768px) {
 
-  .mini-logo, .faq-img, .hero-image, .logo-placeholder {
+  .faq-img, .hero-image, .logo-placeholder {
     display: none;
+  }
+
+  .mini-logo {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mini-logo img {
+    width: 20vw;
+    max-width: 120px;
   }
 
   header {
@@ -359,13 +379,22 @@
   nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     margin: 0px;
+    padding: 10px;
+  }
+
+  nav .ocult {
+    display: none;
+  }
+
+  nav a {
+    margin: 5px;
   }
 
   .mini-menu {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .hero {
@@ -376,6 +405,10 @@
 
   .hero h1, .hero h2, .hero p {
     padding: 10px 20px;
+  }
+
+  .hero h1{
+    margin-top: 10px;
   }
 
   .dobra {
