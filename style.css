@@ -76,7 +76,7 @@
       color: #D4B13A;
     }
     h1 {
-        font-size: 27px;
+        font-size: 25px;
     }
     .colorTwo {
         background-color: #f1f7ef;
@@ -98,7 +98,6 @@
       align-items: end;
     }
     .hero-image {
-      width: 49vw;
       height: 500px;
     }
     .hero-image img {
@@ -172,7 +171,7 @@
     }
     h2 {
       color: #0A2326;
-      font-size: 27px;;
+      font-size: 25px;
     }
     footer {
       background-color: #0A2326;
@@ -324,11 +323,9 @@
     .contact-section h2 {
       color: #D4B13A;
       margin-bottom: 10px;
-      font-size: 2rem;
     }    
     .contact-section p {
       margin-bottom: 40px;
-      font-size: 1.1rem;
       color: #ddd;
     }    
     .contact-item {
