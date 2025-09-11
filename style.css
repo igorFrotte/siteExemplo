@@ -364,7 +364,7 @@
   }
 
   .mini-logo img {
-    width: 20vw;
+    width: 26vw;
     max-width: 120px;
   }
 
@@ -379,7 +379,7 @@
     justify-content: space-between;
     width: 100%;
     margin: 0px;
-    padding: 10px;
+    padding: 5px;
   }
 
   nav a {
@@ -475,7 +475,7 @@
   }
 }
 
-@media (max-width: 461px) {
+@media (max-width: 489px) {
   nav .ocult {
     display: none;
   }
