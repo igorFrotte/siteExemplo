@@ -10,6 +10,16 @@ tabs.forEach(tab => {
   });
 });
 
+const carrossel = document.querySelector('.carrossel');
+  const inners = document.querySelectorAll('.carrossel-inner');
+  let pausado = false;
+
+  carrossel.addEventListener('click', () => {
+    pausado = !pausado;
+    inners.forEach(inner => {
+      inner.style.animationPlayState = pausado ? 'paused' : 'running';
+    });
+  });
 
 const depoimentos = document.querySelectorAll('.depoimento');
 const total = depoimentos.length;
