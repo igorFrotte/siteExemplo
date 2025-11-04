@@ -7,6 +7,32 @@
   <title>ESouto Advocacia</title>
   <link rel="icon" href="images/logoMini.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-387152205"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-387152205');
+  </script>
+  <!-- Event snippet for WhatsApp - Site Geral conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-387152205/SFV2CKiXhN0aEM3yzbgB',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -14,6 +40,7 @@
     <div class="sub">
       <a href="https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia..." 
         target="_blank" 
+        onclick="return gtag_report_conversion('https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia...')"
         class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
             alt="WhatsApp" 
@@ -353,7 +380,7 @@
     </p>
 
     <div class="contato-botoes">
-      <a href="https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia..." target="_blank" class="btn-contato whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia..." onclick="return gtag_report_conversion('https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia...')" target="_blank" class="btn-contato whatsapp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         Falar no WhatsApp
       </a>
@@ -367,7 +394,7 @@
     <div class="contato-canais">
       <div class="contato-item">
         <h3>📞 Telefone</h3>
-        <p><strong>Central:</strong> <a href="tel:+552234120066">(22) 3412-0066</a></p>
+        <p><strong>Central Nacional:</strong> <a href="tel:+552234120066">(22) 3412-0066</a></p>
         <h3>📧 E-mail</h3>
         <p><a href="mailto:contato@esoutoadvocacia.com.br">contato@esoutoadvocacia.com.br</a></p>
       </div>
@@ -389,7 +416,7 @@
     </div>
   </section>
 
-  <a href="https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia..." class="whatsapp-float" target="_blank">
+  <a href="https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia..." onclick="return gtag_report_conversion('https://api.whatsapp.com/send?phone=552234120066&text=Ol%C3%A1,%20estou%20em%20seu%20site%20e%20gostaria%20de%20falar%20com%20a%20ESouto%20Advocacia...')" class="whatsapp-float" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
