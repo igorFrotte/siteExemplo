@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESouto Holding</title>
+  <link rel="icon" href="images/logoTitle.png" type="image/png">
+  <link rel="stylesheet" href="styleSec.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder"><img src="images/logoC.jpeg" /></div>
+    <nav>
+      <div class="mini-logo">
+        <img src="images/miniLogo.png" />
+      </div>
+      <div class="mini-menu">
+        <a href="#QS">Quem Somos</a>
+        <a href="#F">Simulação</a>
+        <a class="ocult" href="#CA">Como Atuamos</a>
+        <a href="#C">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Primeira Dobra -->
+  <section id="QS" class="hero">
+    <div class="hero-text">
+      <div>
+        <h1>Transformamos conquistas judiciais em valor presente</h1>
+        <p style="padding-bottom: 50px;">A ESouto Holding nasceu para reduzir a distância entre a conquista no Judiciário e a realização financeira efetiva, trazendo previsibilidade, liquidez e solidez a cada operação.</p>
+      </div>
+      <div class="colorTwo">
+        <h2>Nosso Propósito</h2>
+        <p>Existimos para conferir efetividade ao direito já reconhecido, transformando decisões judiciais em capital disponível no presente. Nosso compromisso é abreviar o tempo entre a vitória no processo e o acesso ao resultado financeiro, oferecendo previsibilidade e liquidez de forma estruturada e juridicamente segura.</p>
+        <p><em>Mais do que antecipar créditos, nosso propósito é proporcionar tranquilidade, solidez e confiança a quem aguarda por aquilo que já lhe é de direito.</em></p>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="images/note.jpg" />
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <!-- Segunda Dobra -->
+  <section id="F" class="dobra dobra-cards">
+    <div class="cards-2">
+      <!-- Card Simulação -->
+      <div class="action-card" id="openSimulacao" role="button" tabindex="0">
+        <div class="action-icon"><i data-lucide="file-text" class="iconT"></i></div>
+        <h3>Simulação</h3>
+        <p>Envie os dados do processo e solicite análise do nosso time.</p>
+        <span class="action-hint">Abrir formulário</span>
+      </div>
+
+      <!-- Card Parceria -->
+      <div class="action-card" id="openParceria" role="button" tabindex="0">
+        <div class="action-icon"><i data-lucide="handshake" class="iconT"></i></div>
+        <h3>Parceria</h3>
+        <p>Cadastre-se para receber seu código de indicação e gerar bônus.</p>
+        <span class="action-hint">Abrir formulário</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL - SIMULAÇÃO -->
+  <div class="modal-overlay" id="modalSimulacao" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+
+      <div class="form-container modal-form">
+        <h2>Simulação</h2>
+        <p class="subtitle">Tudo de forma on-line e em poucos passos</p>
+        <div class="sep"></div>
+
+        <!-- Seu formulário original (mantido) -->
+        <form id="meuForm">
+          <div class="form-group">
+            <label>Nome completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group">
+            <label>CPF / CNPJ *</label>
+            <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="Digite seu CPF / CNPJ" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group">
+            <label>Celular *</label>
+            <input type="tel" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group linha">
+            <label>Número do Processo *</label>
+            <input type="text" id="processo" name="processo" placeholder="Digite o número do processo" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="info-text">
+            ℹ Se precisar de ajuda, entre em contato com nosso time de <a href="#C">atendimento</a>.
+          </div>
+
+          <div class="btn-container">
+            <button class="btn-consultar" type="submit" disabled>Consultar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL - PARCERIA -->
+  <div class="modal-overlay" id="modalParceria" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+
+      <div class="form-container modal-form">
+        <h2>Parceria</h2>
+        <p class="subtitle">Cadastre-se para receber seu código único de indicação</p>
+        <div class="sep"></div>
+
+        <form id="formParceria">
+          <div class="form-group">
+            <label>Nome completo *</label>
+            <input type="text" id="parcNome" name="nome" placeholder="Digite seu nome completo" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail *</label>
+            <input type="email" id="parcEmail" name="email" placeholder="Digite seu e-mail" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="form-group linha">
+            <label>Celular *</label>
+            <input type="tel" id="parcTelefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+            <small class="error-msg"></small>
+          </div>
+
+          <div class="info-text">
+            ℹ Ao concluir o cadastro, exibiremos seu <strong>código de parceria</strong> para divulgação.
+          </div>
+
+          <div class="btn-container">
+            <button class="btn-consultar" id="btnParceria" type="submit" disabled>Cadastrar</button>
+          </div>
+
+          <!-- Resultado do código retornado pela API -->
+          <div class="code-result" id="codigoParceriaBox" style="display:none;">
+            <p class="code-title">Seu código de parceria:</p>
+            <div class="code-value" id="codigoParceriaValor">—</div>
+            <p class="code-help">
+              Compartilhe este código. Se um terceiro utilizar em uma liquidação, a indicação será atribuída a você.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- Terceira Dobra -->
+  <section id="CA" class="tercD">
+    <h2>Do direito reconhecido ao valor disponível</h2>
+    <p>Nosso compromisso é tornar imediato aquilo que a Justiça já reconheceu como devido. Atuamos com a liquidação de créditos judiciais de forma estruturada e transparente, reduzindo a espera e entregando ao titular a liquidez que lhe é devida.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="image-placeholder"><i data-lucide="handshake" class="iconT"></i></div>
+        <h3>Aquisição Estruturada</h3>
+        <p>Receba hoje o valor do seu crédito judicial, com clareza e previsibilidade em cada etapa.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder"><i data-lucide="clock" class="iconT"></i></div>
+        <h3>Liquidez Imediata</h3>
+        <p>Tenha acesso ao seu dinheiro sem precisar esperar os longos prazos do Judiciário.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder"><i data-lucide="shield-check" class="iconT"></i></div>
+        <h3>Segurança Jurídica</h3>
+        <p>Tenha a tranquilidade de um processo simples, transparente e juridicamente seguro.</p>
+      </div>
+      <div class="card">
+        <div class="image-placeholder"><i data-lucide="building-2" class="iconT"></i></div>
+        <h3>Confiança Institucional</h3>
+        <p>Conte com a solidez de uma holding confiável e especializada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quarta Dobra -->
+  <section id="D" class="quartD">
+    <h2>Efetividade e tranquilidade ao jurisdicionado</h2>
+    <p>Mais do que antecipar valores, nossa atuação representa a concretização da vitória judicial. Levamos ao titular do crédito a efetividade da decisão e a tranquilidade de acessar, no presente, aquilo que já lhe foi garantido em juízo.</p>
+  </section>
+
+  <div class="faq-container">
+    <div class="leftD">
+      <div><h1>Tem alguma dúvida?</h1></div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>O que é um precatório?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Precatório é uma ordem de pagamento emitida pela Justiça para quitar dívidas do governo após decisão judicial definitiva.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Quem pode liquidar seu precatório?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>O titular do direito reconhecido judicialmente pode negociar a venda do precatório a empresas especializadas.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Como funciona a antecipação do crédito?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>A antecipação ocorre por meio da compra do crédito com deságio, permitindo ao titular receber o valor antes do pagamento oficial pelo Estado.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>A operação é segura?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Sim. Todas as operações seguem contratos detalhados e juridicamente seguros, garantindo transparência e confiabilidade.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Quais são os benefícios da antecipação?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Liquidez imediata, previsibilidade financeira, valorização do direito conquistado e redução da espera pelo pagamento oficial.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Qual a diferença entre precatório e RPV?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>O precatório refere-se a valores acima de 60 salários mínimos, enquanto a RPV (Requisição de Pequeno Valor) é para valores inferiores a esse limite.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Quanto tempo demora para receber um precatório?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>O prazo varia conforme o ente devedor (União, Estados ou Municípios) e pode levar anos. Por isso, muitos optam pela antecipação.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Existe algum custo para liquidar meu precatório?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Não há custos diretos para o credor. A negociação envolve o deságio, que é o desconto aplicado sobre o valor de face do precatório.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>O que é deságio?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>É a diferença entre o valor de face do precatório e o valor pago na antecipação. Representa o desconto aplicado na operação.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Posso liquidar apenas parte do meu precatório?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Sim. É possível negociar apenas uma fração do crédito, de acordo com o interesse do titular e da empresa compradora.</p>
+        </div>
+      </div>      
+
+    </div>
+    <div class="faq-img"><img src="images/logoPB.jpeg" /></div>
+  </div>
+
+  <!-- Seção de Contato -->
+  <section id="C" class="contact-section">
+    <div>
+      <h2>Entre em Contato</h2>
+      <p>Estamos prontos para atender você com clareza e agilidade.</p>
+    </div>
+
+    <div class="contact-item">
+      <i data-lucide="phone" class="contact-icon"></i>
+      <div>
+        <h3>Telefone</h3>
+        <p>(22) 3518-0011</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <i data-lucide="message-circle" class="contact-icon"></i>
+      <div>
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/552235180011" target="_blank">(22) 3518-0011</a></p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <i data-lucide="map-pin" class="contact-icon"></i>
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Silva Jardim, 05, Sala 04<br>
+        Centro – Santo Antônio de Pádua – RJ<br>
+        CEP 28470-000</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/552235180011" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <footer>
+    <p>© 2025 ESouto Holding S.A. Todos os direitos reservados.</p>
+    <p>CNPJ: 62.377.600/0001-20</p>
+  </footer>
+
+  <script src="scriptSec.js"></script>
+</body>
+</html>

@@ -1,293 +1,367 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESouto Holding</title>
+
   <link rel="icon" href="images/logoTitle.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo-placeholder"><img src="images/logoC.jpeg" /></div>
-    <nav>
-      <div class="mini-logo">
-        <img src="images/miniLogo.png" />
-      </div>
-      <div class="mini-menu">
-        <a href="#QS">Quem Somos</a>
-        <a href="#F">Simulação</a>
-        <a class="ocult" href="#CA">Como Atuamos</a>
-        <a href="#C">Contato</a>
-      </div>
-    </nav>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ESouto Holding - Início">
+        <img src="images/miniLogo.png" alt="ESouto Holding" class="brand-logo" />
+        <span class="brand-name">ESouto Holding</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#capilaridade">Capilaridade</a>
+        <a href="#missao-visao-valores">Missão, Visão e Valores</a>
+        <a href="#nucleos">Núcleos</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-cta" href="ativos.html">Ativos Judiciais</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Primeira Dobra -->
-  <section id="QS" class="hero">
-    <div class="hero-text">
-      <div>
-        <h1>Transformamos conquistas judiciais em valor presente</h1>
-        <p style="padding-bottom: 50px;">A ESouto Holding nasceu para reduzir a distância entre a conquista no Judiciário e a realização financeira efetiva, trazendo previsibilidade, liquidez e solidez a cada operação.</p>
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">Ecossistema de negócios • Crescimento estruturado • Presença estratégica</p>
+        <h1>Estratégia que rompe fronteiras: capilaridade com propósito</h1>
+        <p class="lead">
+          Na ESouto Holding, o valor de um ecossistema não é medido apenas pelo tamanho, mas pela
+          capacidade de presença e penetração estratégica — levando a essência do negócio intacta
+          a cada novo ponto de contato.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#nucleos">
+            Conhecer núcleos <i data-lucide="arrow-right"></i>
+          </a>
+          <a class="btn ghost" href="ativos.html">
+            Acessar Ativos Judiciais <i data-lucide="external-link"></i>
+          </a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <i data-lucide="shield-check"></i>
+            <span>Segurança e governança</span>
+          </div>
+          <div class="badge">
+            <i data-lucide="zap"></i>
+            <span>Agilidade estratégica</span>
+          </div>
+          <div class="badge">
+            <i data-lucide="network"></i>
+            <span>Sinergia de ecossistema</span>
+          </div>
+        </div>
       </div>
-      <div class="colorTwo">
-        <h2>Nosso Propósito</h2>
-        <p>Existimos para conferir efetividade ao direito já reconhecido, transformando decisões judiciais em capital disponível no presente. Nosso compromisso é abreviar o tempo entre a vitória no processo e o acesso ao resultado financeiro, oferecendo previsibilidade e liquidez de forma estruturada e juridicamente segura.</p>
-        <p><em>Mais do que antecipar créditos, nosso propósito é proporcionar tranquilidade, solidez e confiança a quem aguarda por aquilo que já lhe é de direito.</em></p>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="images/manhattan.jpg" />
-    </div>
-  </section>
 
-  <div class="separator"></div>
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-card">
+          <p class="hero-card-title">“Expandir com inteligência é garantir que a essência do negócio chegue intacta.”</p>
+          <div class="hero-card-row">
+            <i data-lucide="map-pinned"></i>
+            <span>Alcance geográfico inteligente</span>
+          </div>
+          <div class="hero-card-row">
+            <i data-lucide="layout-grid"></i>
+            <span>Diversificação de canais</span>
+          </div>
+          <div class="hero-card-row">
+            <i data-lucide="waypoints"></i>
+            <span>Sinergia entre empresas do grupo</span>
+          </div>
+        </div>
 
-  <!-- Segunda Dobra -->
-  <section id="F" class="dobra">
-    <div class="leftD form-img">
-      <img src="images/note.jpg" />
-    </div>
-    <div class="rightD">
-      <div class="form-container">
-        <h2>Simulação</h2>
-        <p class="subtitle">Tudo de forma on-line e em poucos passos</p>
-
-        <div class="sep"></div>   
-        
-        <form id="meuForm">
-          <div class="form-group">
-            <label>Nome completo *</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
-            <small class="error-msg"></small>
-          </div>
-        
-          <div class="form-group">
-            <label>CPF / CNPJ *</label>
-            <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="Digite seu CPF / CNPJ" required>
-            <small class="error-msg"></small>
-          </div>
-        
-          <div class="form-group">
-            <label>E-mail *</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            <small class="error-msg"></small>
-          </div>
-        
-          <div class="form-group">
-            <label>Celular *</label>
-            <input type="tel" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx" required>
-            <small class="error-msg"></small>
-          </div>
-        
-          <div class="form-group linha">
-            <label>Número do Processo *</label>
-            <input type="text" id="processo" name="processo" placeholder="Digite o número do processo" required>
-            <small class="error-msg"></small>
-          </div>
-        
-          <div class="info-text">
-            ℹ Se precisar de ajuda, entre em contato com nosso time de <a href="#C">atendimento</a>.
-          </div>
-        
-          <div class="btn-container">
-            <button class="btn-consultar" disabled>Consultar</button>
-          </div>
-        </form>
-        
-
+        <div class="hero-image">
+          <!-- Pode trocar por imagem institucional (ex.: city / boardroom / network). -->
+          <img src="images/manhattan.jpg" alt="" />
+        </div>
       </div>
     </div>
   </section>
 
   <div class="separator"></div>
 
-  <!-- Terceira Dobra -->
-  <section id="CA" class="tercD">
-    <h2>Do direito reconhecido ao valor disponível</h2>
-    <p>Nosso compromisso é tornar imediato aquilo que a Justiça já reconheceu como devido. Atuamos com a liquidação de créditos judiciais de forma estruturada e transparente, reduzindo a espera e entregando ao titular a liquidez que lhe é devida.</p>
-    <div class="grid-4">
-      <div class="card">
-        <div class="image-placeholder"><i data-lucide="handshake" class="iconT"></i></div>
-        <h3>Aquisição Estruturada</h3>
-        <p>Receba hoje o valor do seu crédito judicial, com clareza e previsibilidade em cada etapa.</p>
+  <!-- QUEM SOMOS -->
+  <section class="section" id="quem-somos">
+    <div class="section-inner split">
+      <div>
+        <h2>Quem Somos</h2>
+        <p class="text">
+          A ESouto Holding estrutura e acelera negócios com foco em expansão sustentável, criando redes
+          capazes de gerar presença real — no digital e no físico — com disciplina estratégica, governança
+          e integração entre núcleos.
+        </p>
+        <p class="text">
+          Não investimos apenas em empresas; construímos redes que respiram o mercado, com planejamento
+          de crescimento, inteligência territorial e execução consistente.
+        </p>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <i data-lucide="compass"></i>
+            <div>
+              <h3>Direção</h3>
+              <p>Estratégia clara para crescimento com previsibilidade.</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <i data-lucide="layers"></i>
+            <div>
+              <h3>Estrutura</h3>
+              <p>Processos, governança e padronização para escalar.</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <i data-lucide="handshake"></i>
+            <div>
+              <h3>Relações</h3>
+              <p>Parcerias e canais que ampliam alcance e confiança.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="image-placeholder"><i data-lucide="clock" class="iconT"></i></div>
-        <h3>Liquidez Imediata</h3>
-        <p>Tenha acesso ao seu dinheiro sem precisar esperar os longos prazos do Judiciário.</p>
-      </div>
-      <div class="card">
-        <div class="image-placeholder"><i data-lucide="shield-check" class="iconT"></i></div>
-        <h3>Segurança Jurídica</h3>
-        <p>Tenha a tranquilidade de um processo simples, transparente e juridicamente seguro.</p>
-      </div>
-      <div class="card">
-        <div class="image-placeholder"><i data-lucide="building-2" class="iconT"></i></div>
-        <h3>Confiança Institucional</h3>
-        <p>Conte com a solidez de uma holding confiável e especializada.</p>
+
+      <div class="panel">
+        <h3>O que significa capilaridade para nós</h3>
+        <p class="text">
+          Capilaridade é resiliência: quando a presença é real, a marca deixa de ser uma opção local
+          e passa a ser uma referência onipresente — porque está onde o mercado decide.
+        </p>
+        <ul class="checklist">
+          <li><i data-lucide="check-circle-2"></i> Estar onde o crescimento acontece</li>
+          <li><i data-lucide="check-circle-2"></i> Atuar em múltiplos canais (digital e físico)</li>
+          <li><i data-lucide="check-circle-2"></i> Criar efeito de rede entre empresas do grupo</li>
+          <li><i data-lucide="check-circle-2"></i> Reforçar solidez a cada nova unidade/ponto</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Quarta Dobra -->
-  <section id="D" class="quartD">
-    <h2>Efetividade e tranquilidade ao jurisdicionado</h2>
-    <p>Mais do que antecipar valores, nossa atuação representa a concretização da vitória judicial. Levamos ao titular do crédito a efetividade da decisão e a tranquilidade de acessar, no presente, aquilo que já lhe foi garantido em juízo.</p>
-  </section>
+  <div class="separator"></div>
 
-  <div class="faq-container">
-    <div class="leftD">
-      <div><h1>Tem alguma dúvida?</h1></div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>O que é um precatório?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Precatório é uma ordem de pagamento emitida pela Justiça para quitar dívidas do governo após decisão judicial definitiva.</p>
-        </div>
+  <!-- CAPILARIDADE -->
+  <section class="section" id="capilaridade">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Capilaridade com Propósito</h2>
+        <p class="text">
+          A verdadeira capilaridade é a ponte entre o potencial de uma marca e a realidade do consumidor final.
+          Nós mapeamos oportunidades e estruturamos a expansão para que cada novo ponto de contato reforce a solidez do grupo.
+        </p>
       </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Quem pode liquidar seu precatório?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>O titular do direito reconhecido judicialmente pode negociar a venda do precatório a empresas especializadas.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Como funciona a antecipação do crédito?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>A antecipação ocorre por meio da compra do crédito com deságio, permitindo ao titular receber o valor antes do pagamento oficial pelo Estado.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>A operação é segura?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Sim. Todas as operações seguem contratos detalhados e juridicamente seguros, garantindo transparência e confiabilidade.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Quais são os benefícios da antecipação?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Liquidez imediata, previsibilidade financeira, valorização do direito conquistado e redução da espera pelo pagamento oficial.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Qual a diferença entre precatório e RPV?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>O precatório refere-se a valores acima de 60 salários mínimos, enquanto a RPV (Requisição de Pequeno Valor) é para valores inferiores a esse limite.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Quanto tempo demora para receber um precatório?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>O prazo varia conforme o ente devedor (União, Estados ou Municípios) e pode levar anos. Por isso, muitos optam pela antecipação.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Existe algum custo para liquidar meu precatório?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Não há custos diretos para o credor. A negociação envolve o deságio, que é o desconto aplicado sobre o valor de face do precatório.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>O que é deságio?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>É a diferença entre o valor de face do precatório e o valor pago na antecipação. Representa o desconto aplicado na operação.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Posso liquidar apenas parte do meu precatório?</span>
-          <span class="icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Sim. É possível negociar apenas uma fração do crédito, de acordo com o interesse do titular e da empresa compradora.</p>
-        </div>
-      </div>      
 
-    </div>
-    <div class="faq-img"><img src="images/logoPB.jpeg" /></div>
-  </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="map"></i></div>
+          <h3>Alcance Geográfico Inteligente</h3>
+          <p>Presença estratégica em regiões e segmentos onde o crescimento é consistente e sustentável.</p>
+        </div>
 
-  <!-- Seção de Contato -->
-  <section id="C" class="contact-section">
-    <div>
-      <h2>Entre em Contato</h2>
-      <p>Estamos prontos para atender você com clareza e agilidade.</p>
-    </div>
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="smartphone"></i></div>
+          <h3>Diversificação de Canais</h3>
+          <p>Operação multicanal para garantir que a solução chegue ao cliente com fluidez e consistência.</p>
+        </div>
 
-    <div class="contact-item">
-      <i data-lucide="phone" class="contact-icon"></i>
-      <div>
-        <h3>Telefone</h3>
-        <p>(22) 3518-0011</p>
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="git-merge"></i></div>
+          <h3>Sinergia de Ecossistema</h3>
+          <p>Um núcleo fortalece o outro: compartilhamos força, aberturas e oportunidades para acelerar tração.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="contact-item">
-      <i data-lucide="message-circle" class="contact-icon"></i>
-      <div>
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/552235180011" target="_blank">(22) 3518-0011</a></p>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <i data-lucide="map-pin" class="contact-icon"></i>
-      <div>
-        <h3>Endereço</h3>
-        <p>Rua Silva Jardim, 05, Sala 04<br>
-        Centro – Santo Antônio de Pádua – RJ<br>
-        CEP 28470-000</p>
+      <div class="callout">
+        <div class="callout-text">
+          <h3>Como podemos aplicar isso ao seu negócio?</h3>
+          <p class="text">
+            A capilaridade transforma escala em vantagem competitiva. Se você busca um parceiro que entende
+            como levar uma operação do ponto A ao reconhecimento nacional, você está no lugar certo.
+          </p>
+        </div>
+        <a class="btn primary" href="#contato">
+          Falar com o time <i data-lucide="message-circle"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <a href="https://wa.me/552235180011" class="whatsapp-float" target="_blank">
+  <div class="separator"></div>
+
+  <!-- MISSÃO / VISÃO / VALORES -->
+  <section class="section" id="missao-visao-valores">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Missão, Visão e Valores</h2>
+        <p class="text">
+          A base da expansão é construída com integridade, agilidade e compromisso real com quem confia no grupo.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="target"></i></div>
+          <h3>Missão</h3>
+          <p>
+            Prover soluções financeiras inteligentes para que pessoas e empresas possam antecipar ativos judiciais
+            com segurança e agilidade, convertendo expectativas de direito em realidade financeira.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="telescope"></i></div>
+          <h3>Visão</h3>
+          <p>
+            Consolidar o maior ecossistema de antecipação de ativos do país, com crescimento sustentável,
+            capilaridade real e presença em cada elo da cadeia jurídico-financeira.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="gem"></i></div>
+          <h3>Valores</h3>
+          <ul class="bullets">
+            <li><strong>Integridade transparente</strong>: clareza e segurança jurídica.</li>
+            <li><strong>Agilidade estratégica</strong>: decisão rápida e entrega eficiente.</li>
+            <li><strong>Compromisso com o cliente</strong>: respeito ao projeto de vida/negócio.</li>
+            <li><strong>Inovação em soluções</strong>: criação de vias novas para o capital circular.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <!-- NÚCLEOS -->
+  <section class="section" id="nucleos">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Núcleos da ESouto Holding</h2>
+        <p class="text">
+          A operação é organizada por núcleos. Cada núcleo possui estratégia, execução e integração com o ecossistema
+          do grupo, ampliando alcance e acelerando resultados.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <a class="card link-card" href="ativos.html" aria-label="Acessar Núcleo de Ativos Judiciais">
+          <div class="icon-wrap"><i data-lucide="scale"></i></div>
+          <h3>Ativos Judiciais</h3>
+          <p>Liquidação e antecipação estruturada de créditos judiciais, com segurança e previsibilidade.</p>
+          <span class="link-hint">Acessar <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="briefcase-business"></i></div>
+          <h3>Novos Negócios</h3>
+          <p>Estruturação e tração de operações com potencial de escala, canais e sinergias.</p>
+          <span class="muted">Em expansão</span>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="bar-chart-3"></i></div>
+          <h3>Inteligência & Expansão</h3>
+          <p>Mapeamento territorial, estratégia de presença e diversificação de canais.</p>
+          <span class="muted">Em expansão</span>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap"><i data-lucide="users"></i></div>
+          <h3>Relacionamento</h3>
+          <p>Atendimento, parcerias, integração e gestão de confiança ao longo da jornada.</p>
+          <span class="muted">Em expansão</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <!-- CONTATO -->
+  <section class="section contact" id="contato">
+    <div class="section-inner split">
+      <div>
+        <h2>Contato</h2>
+        <p class="text">Estamos prontos para atender com clareza, objetividade e direcionamento.</p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <i data-lucide="phone"></i>
+            <div>
+              <h3>Telefone</h3>
+              <p>(22) 3518-0011</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i data-lucide="message-circle"></i>
+            <div>
+              <h3>WhatsApp</h3>
+              <p><a href="https://wa.me/552235180011" target="_blank" rel="noopener">(22) 3518-0011</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <h3>Endereço</h3>
+              <p>
+                Rua Silva Jardim, 05, Sala 04<br>
+                Centro – Santo Antônio de Pádua – RJ<br>
+                CEP 28470-000
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Acesso rápido</h3>
+        <p class="text">
+          Para antecipação e liquidação de créditos judiciais, acesse o núcleo de Ativos Judiciais e realize a simulação.
+        </p>
+        <a class="btn primary full" href="ativos.html">
+          Ir para Ativos Judiciais <i data-lucide="arrow-right"></i>
+        </a>
+        <a class="btn ghost full" href="#topo">
+          Voltar ao topo <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/552235180011" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
-  <footer>
-    <p>© 2025 ESouto Holding S.A. Todos os direitos reservados.</p>
-    <p>CNPJ: 62.377.600/0001-20</p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© 2026 ESouto Holding S.A. Todos os direitos reservados.</p>
+      <p>CNPJ: 62.377.600/0001-20</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
