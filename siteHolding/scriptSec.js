@@ -137,7 +137,6 @@ function habilitarBotaoSeValido(form, btn){
   btn.style.color = btn.disabled ? "#666" : "#fff";
 }
 
-/* ===== SIMULAÇÃO (seu formulário original, agora dentro do modal) ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("meuForm");
   if (form){
@@ -185,10 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       try {
-        /* IMPORTANTE:
-           - Para somente "enviar" (sem ler resposta), no-cors funciona.
-           - Aqui mantive do jeito que você tinha para não quebrar.
-        */
         await fetch("https://script.google.com/macros/s/AKfycbz42M6bgQepkbRjG9kxG85n7buZoJq0vc0iAbHy2xq3zym5ueu9c-YMSZ_PmdMF9zaZ/exec", {
           method: "POST",
           mode: "no-cors",
@@ -210,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== PARCERIA (novo formulário, com retorno de código) ===== */
+  /* ===== PARCERIA (gera código no front e envia para gravar; exibe se não houver falha) ===== */
   const formParc = document.getElementById("formParceria");
   if (formParc){
     const inputs = formParc.querySelectorAll("input[required]");
@@ -221,6 +216,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const box = document.getElementById("codigoParceriaBox");
     const valor = document.getElementById("codigoParceriaValor");
+
+    // helpers (front)
+    function removerAcentosFront(s){
+      return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+    function gerar3CharsFront(){
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let out = "";
+      for (let i = 0; i < 3; i++) out += chars[Math.floor(Math.random() * chars.length)];
+      return out;
+    }
+    function gerarCodigoParceriaFront(nomeCompleto){
+      const primeiro = (nomeCompleto || "").trim().split(" ")[0] || "USER";
+      const base = removerAcentosFront(primeiro).toUpperCase();
+      return `${base}.${gerar3CharsFront()}`;
+    }
 
     // máscara telefone
     parcTelefone?.addEventListener("input", (e) => {
@@ -247,44 +258,55 @@ document.addEventListener("DOMContentLoaded", () => {
       inputs.forEach(i => { if (!validarCampo(i)) valido = false; });
       if (!valido) return;
 
-      const payload = {
-        nome: formParc.nome.value.trim(),
-        email: formParc.email.value.trim(),
-        telefone: formParc.telefone.value.replace(/\D/g, "")
-      };
+      const nome = formParc.nome.value.trim();
+      const email = formParc.email.value.trim();
+      const telefone = formParc.telefone.value.replace(/\D/g, "");
+
+      const codigo = gerarCodigoParceriaFront(nome);
+
+      const payload = { nome, email, telefone, codigo };
 
       try {
-        const resp = await fetch("https://script.google.com/macros/s/AKfycbwut6wLYZTvF1q2Dhn0en7T1t6xQK_HSVvQv6lxn5fd_8739hiTVvFpwDX7vG7pM1S3/exec", {
+        // trava botão durante envio
+        btnParc.disabled = true;
+        btnParc.style.cursor = "not-allowed";
+        btnParc.style.background = "#ccc";
+        btnParc.style.color = "#666";
+
+        // envia para gravar (no-cors evita CORS e não precisa ler resposta)
+        await fetch("https://script.google.com/macros/s/AKfycbwut6wLYZTvF1q2Dhn0en7T1t6xQK_HSVvQv6lxn5fd_8739hiTVvFpwDX7vG7pM1S3/exec", {
           method: "POST",
-          mode: "cors",
-          headers: { "Content-Type": "text/plain;charset=utf-8" }, // <- evita preflight
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload)
         });
 
-        const raw = await resp.text();
-
-        let code = "";
-        try {
-          const json = JSON.parse(raw);
-          code = (json.code || json.codigo || "").toString().trim();
-        } catch {
-          code = raw.trim();
-        }
-
-        if (!code) {
-          console.error("Resposta bruta da API:", raw);
-          throw new Error("API não retornou o código.");
-        }
-
-        if (valor) valor.textContent = code.toUpperCase();
+        // se não houve falha na comunicação, exibe o código
+        if (valor) valor.textContent = codigo.toUpperCase();
         if (box) box.style.display = "block";
 
-        habilitarBotaoSeValido(formParc, btnParc);
+        // opcional: limpar após sucesso
+        // formParc.reset();
 
       } catch (err) {
-        alert("Erro ao cadastrar parceria. Verifique a implantação da Web App (acesso público), CORS e tente novamente.");
+        alert("Falha ao cadastrar parceria. Por favor, tente novamente.");
         console.error(err);
+      } finally {
+        // reabilita e revalida
+        habilitarBotaoSeValido(formParc, btnParc);
       }
     });
   }
+
+  /* ===== Abrir modal automaticamente via URL ===== */
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("parceria") === "1") {
+    openModal("modalParceria");
+  }
+
+  if (params.get("simulacao") === "1") {
+    openModal("modalSimulacao");
+  }
+
 });
