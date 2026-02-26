@@ -12,33 +12,40 @@
 
 <body>
   <header class="header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="ESouto Holding - Início">
-        <img src="images/miniLogo.png" alt="ESouto Holding" class="brand-logo" />
-        <span class="brand-name">ESouto Holding</span>
-      </a>
+    <div class="logo-placeholder">
+      <img src="images/logoC.jpeg" alt="ESouto Holding">
+    </div>
+    <nav class="nav-fixed">
+      <div class="mini-logo">
+        <a href="index.html" aria-label="ESouto Holding - Início">
+          <img src="images/miniLogo.png" alt="ESouto Holding" />
+        </a>
+      </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <i data-lucide="menu"></i>
       </button>
 
-      <nav class="nav" id="nav">
+      <div class="mini-menu" id="nav">
         <a href="#quem-somos">Quem Somos</a>
         <a href="#capilaridade">Capilaridade</a>
         <a href="#missao-visao-valores">Missão, Visão e Valores</a>
         <a href="#nucleos">Núcleos</a>
         <a href="#contato">Contato</a>
         <a class="nav-cta" href="ativos.html">Ativos Judiciais</a>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="topo">
-    <div class="hero-inner">
-      <div class="hero-content">
+  <section class="hero hero-bg" id="topo">
+    <div class="hero-bg-media" aria-hidden="true"></div>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+    <div class="hero-inner hero-inner-right">
+      <div class="hero-content hero-content-right">
         <p class="eyebrow">Ecossistema de negócios • Crescimento estruturado • Presença estratégica</p>
-        <h1>Estratégia que rompe fronteiras: capilaridade com propósito</h1>
+        <h1>Estratégia que rompe fronteiras: Capilaridade com propósito</h1>
         <p class="lead">
           Na ESouto Holding, o valor de um ecossistema não é medido apenas pelo tamanho, mas pela
           capacidade de presença e penetração estratégica — levando a essência do negócio intacta
@@ -67,29 +74,6 @@
             <i data-lucide="network"></i>
             <span>Sinergia de ecossistema</span>
           </div>
-        </div>
-      </div>
-
-      <div class="hero-media" aria-hidden="true">
-        <div class="hero-card">
-          <p class="hero-card-title">“Expandir com inteligência é garantir que a essência do negócio chegue intacta.”</p>
-          <div class="hero-card-row">
-            <i data-lucide="map-pinned"></i>
-            <span>Alcance geográfico inteligente</span>
-          </div>
-          <div class="hero-card-row">
-            <i data-lucide="layout-grid"></i>
-            <span>Diversificação de canais</span>
-          </div>
-          <div class="hero-card-row">
-            <i data-lucide="waypoints"></i>
-            <span>Sinergia entre empresas do grupo</span>
-          </div>
-        </div>
-
-        <div class="hero-image">
-          <!-- Pode trocar por imagem institucional (ex.: city / boardroom / network). -->
-          <img src="images/manhattan.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -360,8 +344,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>

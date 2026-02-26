@@ -32,69 +32,85 @@ body{
   scroll-margin-top: 110px;
 }
 
-/* ===== Header / Nav (fixo, como no antigo) ===== */
+/* ===== Header / Nav (igual ao ativos.html) ===== */
 .header{
   background-color: var(--verde-escuro);
   color: var(--branco);
-  padding-bottom: 90px; /* mesma lógica do antigo */
+  padding-bottom: 90px; /* mantém o respiro igual ao seu layout */
 }
 
-.header-inner{
+/* Logo principal dourada (igual ativos.html) */
+.logo-placeholder {
+  width: 150px;
+  height: 50px;
+  background-color: var(--dourado);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--verde-escuro);
+  font-weight: bold;
+  margin-top: 50px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  z-index: 10;
+}
+
+.logo-placeholder > img {
+  width: 100%;
+  height: auto;
+  border-radius: 20%;
+}
+
+.nav-fixed{
+  text-align: right;
+  font-size: 20px;
   position: fixed;
   right: 0;
   top: 0;
-  width: 100%;
-  height: 70px;
-  padding: 20px;
   background-color: var(--verde-escuro);
+  width: 100%;
+  padding: 50px 50px 40px 50px;
+  height: 70px; /* um pouco maior para encaixar o botão mobile */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
+  z-index: 5;
 }
 
-/* Marca / mini-logo */
-.brand{
+/* mini-logo (igual ao ativos) */
+.mini-logo{
+  margin-left: 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--branco);
-  margin-left: 83px; /* alinhado ao antigo */
 }
 
-.brand-logo{
+.mini-logo img{
   border-radius: 10%;
-  width: 44px;
-  height: 44px;
+  width: 130px;
   object-fit: contain;
 }
 
-.brand-name{
-  font-weight: bold;
-  letter-spacing: 0.2px;
-}
-
-/* Links do menu */
-.nav{
+/* menu (equivalente ao .mini-menu do ativos) */
+.mini-menu{
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 20px;
 }
 
-.nav a{
+.mini-menu a{
   color: var(--branco);
   margin: 0 10px;
   text-decoration: none;
 }
 
-.nav a:hover{
+.mini-menu a:hover{
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-/* CTA no menu (link pro núcleo de Ativos Judiciais) */
+/* CTA igual ao seu, mantendo identidade */
 .nav-cta{
   background-color: transparent;
   border: 1px solid var(--dourado);
@@ -134,7 +150,7 @@ body{
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-top: 70px; /* compensar o nav fixo */
+  padding-top: 20px; /* compensar o nav fixo */
 }
 
 .hero-inner{
@@ -259,6 +275,106 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
 /* “Hero-card” no topo da imagem (mantém sobriedade) */
 .hero-card{
   display: none; /* para ficar mais harmônico com o antigo (sem overlay). Se quiser, eu reativo. */
+}
+
+/* ===== HERO com imagem de fundo (PB + blur) ===== */
+.hero.hero-bg{
+  position: relative;
+  min-height: 520px;
+  width: 100%;
+  padding-top: 110px; /* compensar nav fixo */
+  padding-bottom: 40px;
+  overflow: hidden;
+  background-color: var(--verde-escuro);
+}
+
+/* camada da imagem */
+.hero-bg-media{
+  position: absolute;
+  inset: 0;
+  background-image: url("images/manhattan.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) blur(1px);
+  transform: scale(1.08); /* evita bordas "cortadas" pelo blur */
+  z-index: 0;
+}
+
+/* overlay para leitura */
+.hero-bg-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 35, 38, 0.72);
+  z-index: 1;
+}
+
+/* conteúdo acima do fundo */
+.hero-inner.hero-inner-right{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* joga para direita */
+}
+
+/* conteúdo alinhado à direita */
+.hero-content.hero-content-right{
+  width: min(890px, 92vw);
+  padding: 0 var(--pad);
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* textos dentro do hero agora são claros */
+.hero.hero-bg .eyebrow{
+  color: rgba(255,255,255,0.85);
+  margin-top: 0;
+  padding: 0;
+}
+
+.hero.hero-bg h1{
+  color: var(--dourado);
+  padding: 0;
+  margin-top: 10px;
+}
+
+.hero.hero-bg .lead{
+  color: rgba(255,255,255,0.95);
+  padding: 0;
+}
+
+.hero.hero-bg .hero-actions{
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.hero.hero-bg .hero-badges{
+  padding: 0;
+  justify-content: flex-end;
+}
+
+/* Ajuste mobile: centraliza e mantém legibilidade */
+@media (max-width: 768px){
+  .hero.hero-bg{
+    padding-top: 120px;
+    text-align: center;
+  }
+
+  .hero-inner.hero-inner-right{
+    justify-content: center;
+  }
+
+  .hero-content.hero-content-right{
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero.hero-bg .hero-actions,
+  .hero.hero-bg .hero-badges{
+    justify-content: center;
+  }
 }
 
 /* ===== Seções (fundo claro como o antigo) ===== */
@@ -474,6 +590,10 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
 /* ===== Responsividade (espelhando seu comportamento) ===== */
 @media (max-width: 768px){
 
+  .logo-placeholder{
+    display: none;
+  }
+
   /* Ajustes gerais */
   :root{ --pad: 20px; }
 
@@ -501,8 +621,14 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
     justify-content: center;
   }
 
-  /* menu dropdown */
-  .nav{
+    .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* menu dropdown (igual lógica do seu, mas aplicado ao .mini-menu) */
+  .mini-menu{
     display: none;
     position: absolute;
     top: 70px;
@@ -515,12 +641,22 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
     font-size: 14px;
   }
 
-  .nav.open{
+  .mini-menu.open{
     display: flex;
   }
 
-  .nav a{
+  .mini-menu a{
     margin: 5px;
+  }
+
+  .mini-logo{
+    margin-left: 20px;
+  }
+
+  .mini-logo img{
+    width: 26vw;
+    max-width: 120px;
+    height: auto;
   }
 
   /* Hero empilha */
