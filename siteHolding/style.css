@@ -28,7 +28,7 @@ body{
 }
 
 /* Para manter o mesmo comportamento do seu scroll-margin */
-#quem-somos, #capilaridade, #missao-visao-valores, #nucleos, #contato{
+#quem-somos, #como-atuamos, #missao-visao-valores, #nucleos, #contato{
   scroll-margin-top: 110px;
 }
 
@@ -110,20 +110,6 @@ body{
   text-underline-offset: 4px;
 }
 
-/* CTA igual ao seu, mantendo identidade */
-.nav-cta{
-  background-color: transparent;
-  border: 1px solid var(--dourado);
-  border-radius: 6px;
-  padding: 8px 10px;
-  color: var(--dourado) !important;
-  text-decoration: none !important;
-}
-
-.nav-cta:hover{
-  background-color: rgba(212,177,58,0.12);
-}
-
 /* Botão menu mobile */
 .menu-toggle{
   display: none;
@@ -203,10 +189,10 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
 /* Botões alinhados ao seu estilo (dourado/verde) */
 .hero-actions{
   display: flex;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
   padding: 0 10px 0 var(--pad);
-  margin: 10px 0 20px;
+  margin: 60px 0 20px;
 }
 
 .btn{
@@ -234,31 +220,6 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
 
 .btn:hover{
   transform: translateY(-5px);
-}
-
-/* Badges simples */
-.hero-badges{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 0 10px 30px var(--pad);
-}
-
-.badge{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 999px;
-  padding: 10px 12px;
-  color: var(--branco);
-  font-size: 13px;
-}
-
-.badge svg{
-  width: 16px;
-  height: 16px;
-  color: var(--dourado);
 }
 
 /* Coluna direita com imagem (igual ao antigo hero-image) */
@@ -390,11 +351,58 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   margin: 0;
 }
 
+/* ===== Quem Somos (layout limpo) ===== */
+
+#quem-somos h2{
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+#quem-somos .text{
+  margin: 0 0 14px 0;
+}
+
 /* textos */
 .text, p{
   color: var(--texto);
   font-size: 18px;
   line-height: 1.55;
+}
+
+/* ===== Quem Somos com logo à direita ===== */
+
+.quem-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.quem-texto{
+  width: 60%;
+}
+
+.quem-texto h2{
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.quem-texto .text{
+  margin-bottom: 14px;
+}
+
+.quem-imagem{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quem-imagem img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
 }
 
 /* ===== Cards / Grids (mesma identidade do antigo) ===== */
@@ -449,6 +457,42 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   width: 40px;
   height: 40px;
   color: var(--dourado);
+}
+
+/* ===== Como Atuamos (novo layout) ===== */
+.como-grid{
+  margin-top: 10px;
+}
+
+.como-card{
+  min-height: 300px;
+  min-width: 25vw;
+  margin: 10px 0px;
+}
+
+.como-fecho{
+  margin-top: 25px;
+  border: 1px solid rgba(10,35,38,0.18);
+  border-left: 6px solid var(--dourado);
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: var(--sombra);
+  padding: 18px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.como-fecho svg{
+  width: 22px;
+  height: 22px;
+  color: var(--verde-escuro);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.como-fecho .text{
+  margin: 0;
 }
 
 /* bloco callout (em tom claro, com borda verde) */
@@ -737,6 +781,24 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
     object-fit: contain;
     display: block;
   }
+
+  .quem-grid{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .quem-texto{
+    width: 100%;
+  }
+
+  .quem-imagem{
+    width: 70%;
+    margin-top: 20px;
+  }
+
+  .como-fecho{
+  text-align: left;
+}
 }
 
 /* mesmo comportamento do seu ocult em telas pequenas */
