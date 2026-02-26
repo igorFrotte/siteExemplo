@@ -282,10 +282,12 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   position: relative;
   min-height: 520px;
   width: 100%;
-  padding-top: 110px; /* compensar nav fixo */
+  padding-top: 70px; /* compensar nav fixo */
   padding-bottom: 40px;
   overflow: hidden;
   background-color: var(--verde-escuro);
+  display: block;        /* remove o flex herdado do .hero */
+  align-items: initial; 
 }
 
 /* camada da imagem */
