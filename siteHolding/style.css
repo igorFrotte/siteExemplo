@@ -351,6 +351,66 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   margin: 0;
 }
 
+/* ===== Fundamentos Institucionais (sem cards, sobrio) ===== */
+
+.fundamentos-blocos{
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid var(--verde-escuro);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+/* bloco individual */
+.fundamento{
+  padding: 22px 22px;
+}
+
+.fundamento-topo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+/* “tag” discreta */
+.fundamento-tag{
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: var(--verde-escuro);
+  text-transform: uppercase;
+  border-left: 5px solid var(--dourado);
+  padding-left: 12px;
+}
+
+/* corpo */
+.fundamento-corpo .text{
+  margin: 0;
+  color: var(--texto);
+}
+
+/* separador sutil */
+.fundamento-sep{
+  height: 1px;
+  background: var(--verde-escuro);
+  margin: 0 22px;
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .fundamentos-blocos{
+    border-radius: 12px;
+  }
+  .fundamento{
+    padding: 18px 16px;
+  }
+  .fundamento-sep{
+    margin: 0 16px;
+  }
+}
+
 /* ===== Quem Somos (layout limpo) ===== */
 
 #quem-somos h2{
@@ -427,6 +487,10 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   margin: 0 5px;
 }
 
+.grid-4 .card {
+  min-height: 350px;
+}
+
 .card:hover{
   transform: translateY(-5px);
 }
@@ -495,6 +559,39 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   margin: 0;
 }
 
+/* ===== Operações de Liquidez (bloco estratégico) ===== */
+.operacoes-liquidez{
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(10,35,38,0.95),
+    rgba(10,35,38,0.85)
+  );
+  color: var(--branco);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.operacoes-texto{
+  max-width: 760px;
+}
+
+.operacoes-liquidez h3{
+  color: var(--dourado);
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.operacoes-liquidez .text{
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 14px;
+}
+
+.operacoes-liquidez .btn{
+  margin-top: 10px;
+}
+
 /* bloco callout (em tom claro, com borda verde) */
 .callout{
   border: var(--verde-escuro) solid 1px;
@@ -528,109 +625,61 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
   color: var(--verde-escuro);
 }
 
-/* ===== Contato (igual ao antigo: seção verde com dourado) ===== */
-.contact{
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: 20px var(--pad) 0 var(--pad);
+.contact-section {
+  background-color: #0A2326;
+  color: white;
+  padding: 20px 80px 0px 80px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.contact h2{
-  color: var(--dourado);
+.contact-section h2 {
+  color: #D4B13A;
   margin-bottom: 10px;
 }
 
-.contact p{
-  color: #ddd;
+.contact-section p {
   margin-bottom: 40px;
+  color: #ddd;
 }
 
-.split{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-}
-
-.contact-list{
-  width: 60%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.contact-item{
+.contact-item {
   display: flex;
   align-items: flex-start;
   gap: 15px;
   text-align: left;
+  margin-top: 30px;
 }
 
-.contact-item h3{
-  color: var(--dourado);
+.contact-item h3 {
+  color: #D4B13A;
   margin-bottom: 5px;
 }
 
-.contact-item p{
+.contact-item p {
   margin: 0;
-  color: #ddd;
 }
 
-.contact-item svg{
+.contact-icon {
   width: 30px;
   height: 30px;
-  color: var(--dourado);
+  color: #D4B13A;
   flex-shrink: 0;
 }
 
-.contact a{
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/* Painel do contato (caixa clara) */
-.contact .panel{
-  background-color: #ffffff;
-  border: 1px solid var(--borda);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: var(--sombra);
-  width: 35%;
-}
-
-.contact .panel h3{
-  color: var(--verde-escuro);
-}
-
-.contact .panel p{
-  color: var(--texto);
-  margin-bottom: 16px;
-}
-
-.btn.full{
-  width: 100%;
-  justify-content: center;
-  display: inline-flex;
-  margin-bottom: 10px;
-}
-
-/* ===== WhatsApp flutuante (igual ao antigo: oculto no desktop, aparece no mobile) ===== */
-.whatsapp-float{
+.whatsapp-float {
   display: none;
 }
 
-/* ===== Footer ===== */
-.footer{
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: 20px;
+footer {
+  background-color: #0A2326;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 
-.footer-inner{
-  display: block;
+footer p {
+  color: #ddd;
 }
 
 /* ===== Responsividade (espelhando seu comportamento) ===== */
@@ -747,22 +796,23 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
     text-align: center;
   }
 
-  .contact-list{
-    width: 100%;
+  .contact-section {
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
   }
 
-  .contact-item{
+  .contact-item {
     justify-content: center;
     text-align: center;
   }
 
-  .contact .panel{
-    width: 100%;
+  .contact-section p {
+    margin-bottom: 20px;
   }
 
-  .whatsapp-float{
+  .whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -775,11 +825,11 @@ h2{ font-size: 25px; color: var(--verde-escuro); }
     transition: transform 0.3s ease;
   }
 
-  .whatsapp-float img{
+  .whatsapp-float img {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    display: block;
+    display: block;  
   }
 
   .quem-grid{
