@@ -80,7 +80,6 @@ body{
 
 /* mini-logo (igual ao ativos) */
 .mini-logo{
-  margin-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -741,10 +740,6 @@ footer p {
 
   .mini-menu a{
     margin: 5px;
-  }
-
-  .mini-logo{
-    margin-left: 20px;
   }
 
   .mini-logo img{

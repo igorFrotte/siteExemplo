@@ -657,8 +657,8 @@ input.error {
   .mini-menu {
     display: none;
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 80px;
+    left: 40px;
     width: 100%;
     padding: 10px;
     background-color: #0A2326;
@@ -679,7 +679,7 @@ input.error {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 90px;
   }
 
   .hero h1, .hero h2, .hero p {
