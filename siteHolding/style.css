@@ -86,8 +86,7 @@ body{
 }
 
 .mini-logo img{
-  border-radius: 10%;
-  width: 130px;
+  width: 90px;
   object-fit: contain;
 }
 
@@ -834,7 +833,6 @@ footer p {
 
   .quem-grid{
     flex-direction: column;
-    text-align: center;
   }
 
   .quem-texto{

@@ -10,35 +10,59 @@
 </head>
 <body>
   <header>
-    <div class="logo-placeholder"><img src="images/logoC.jpeg" /></div>
-    <nav>
+    <!-- Logo grande (logoC) clicável para voltar ao início -->
+    <a class="logo-placeholder" href="index.html" aria-label="Voltar para a página inicial">
+      <img src="images/logoC.jpeg" alt="ESouto Holding" />
+    </a>
+
+    <!-- NAV igual à principal (toggle + menu com id="nav") -->
+    <nav class="nav-fixed">
       <div class="mini-logo">
-        <img src="images/miniLogo.png" />
+        <a href="index.html" aria-label="Voltar para a página inicial">
+          <img src="images/navLogo.png" alt="ESouto Holding" />
+        </a>
       </div>
-      <div class="mini-menu">
-        <a href="#QS">Quem Somos</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="mini-menu" id="nav">
+        <a href="#QS">Propósito</a>
         <a href="#F">Simulação</a>
-        <a class="ocult" href="#CA">Como Atuamos</a>
+        <a href="#CA">Como Atuamos</a>
         <a href="#C">Contato</a>
       </div>
     </nav>
   </header>
 
-  <!-- Primeira Dobra -->
+  <!-- Primeira Dobra (mantida, apenas ajuste de estrutura) -->
   <section id="QS" class="hero">
     <div class="hero-text">
       <div>
         <h1>Transformamos conquistas judiciais em valor presente</h1>
-        <p style="padding-bottom: 50px;">A ESouto Holding nasceu para reduzir a distância entre a conquista no Judiciário e a realização financeira efetiva, trazendo previsibilidade, liquidez e solidez a cada operação.</p>
+        <p style="padding-bottom: 50px;">
+          A ESouto Holding nasceu para reduzir a distância entre a conquista no Judiciário e a realização financeira
+          efetiva, trazendo previsibilidade, liquidez e solidez a cada operação.
+        </p>
       </div>
+
       <div class="colorTwo">
         <h2>Nosso Propósito</h2>
-        <p>Existimos para conferir efetividade ao direito já reconhecido, transformando decisões judiciais em capital disponível no presente. Nosso compromisso é abreviar o tempo entre a vitória no processo e o acesso ao resultado financeiro, oferecendo previsibilidade e liquidez de forma estruturada e juridicamente segura.</p>
-        <p><em>Mais do que antecipar créditos, nosso propósito é proporcionar tranquilidade, solidez e confiança a quem aguarda por aquilo que já lhe é de direito.</em></p>
+        <p>
+          Existimos para conferir efetividade ao direito já reconhecido, transformando decisões judiciais em capital
+          disponível no presente. Nosso compromisso é abreviar o tempo entre a vitória no processo e o acesso ao
+          resultado financeiro, oferecendo previsibilidade e liquidez de forma estruturada e juridicamente segura.
+        </p>
+        <p>
+          <em>Mais do que antecipar créditos, nosso propósito é proporcionar tranquilidade, solidez e confiança a quem
+            aguarda por aquilo que já lhe é de direito.</em>
+        </p>
       </div>
     </div>
+
     <div class="hero-image">
-      <img src="images/note.jpg" />
+      <img src="images/note.jpg" alt="ESouto Holding" />
     </div>
   </section>
 
